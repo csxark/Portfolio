@@ -47,20 +47,6 @@
 .navbar {
   display: flex;
 }
-/* .nav a{
-	color: var(--text-color);
-	font-size: var(--p-font);
-	font-weight: bold;
-	padding: 10px 25px;
-	margin: 0 2px;
-	border-radius: 0.5rem;
-	transition: all .40s ease;
-}
-.nav a:hover{
-	background:linear-gradient(rgba(255, 255, 255, 0.473),
-    rgba(150, 150, 150, 0.25));
-	color: var(--text-color);
-} */
 .nav a {
   padding: 10px 20px;
   text-transform: uppercase;
@@ -131,7 +117,7 @@ i {
   left: 20px;
 }
 .btn,
-#btnl {
+#btnl,#contact1 {
   display: inline-block;
   padding: 14px 40px;
   border-radius: 0.5rem;
@@ -142,8 +128,8 @@ i {
   border: 1px solid red;
   transition: all 0.4s ease;
 }
-.btn,
-#btnl a:hover {
+.btn a,
+#btnl a,#contact1 a:hover {
   transform: scale(1.01) translateY(-5px);
   background: transparent;
   border: 1px solid red;
