@@ -8,71 +8,136 @@
   scroll-behavior: smooth;
 }
 
+/* Main Navbar Styles */
 #nav {
-	position: fixed;
-	top: 0;
-	right: 0;
-	height: 80px;
-	width: 100%;
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background: transparent;
-	padding: 22px 2%;
-	border-bottom: 1px solid transparent;
-	transition: all 0.8s ease;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  
-  #nav.scrolled {
-	background-color: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.228);
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	animation: slideIn 0.8s ease forwards;
-  }
-  
-  @keyframes slideIn {
-	0% {
-	  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-	}
-	100% {
-	  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-	}
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: none;
+  padding: 0 2%;
+  transition: all 0.8s ease;
+}
 
+#nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.228);
+}
+
+/* Logo Styles */
+.logo img {
+  height: 50px;
+}
+
+/* Navbar Links */
 .navbar {
   display: flex;
+  align-items: center;
 }
-.nav a {
-  padding: 10px 20px;
+
+.navbar a {
+  padding: 10px 15px;
   text-transform: uppercase;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 500;
+  text-decoration: none;
   color: #fffdfd;
-  text-shadow: none;
   background: transparent;
   cursor: pointer;
-  box-shadow: transparent;
-  border: 0px solid #ffffff80;
   transition: 0.5s ease;
-  user-select: none;
-  margin-left: 4px;
+  margin-left: 15px;
 }
 
-.nav a:hover,
-:focus {
+.navbar a:hover {
   color: #ffffff;
   background: #ff0000;
   border: 1px solid #eb3908c3;
-  text-shadow: 0 0 5px #0b0000, 0 0 10px #0b0000, 0 0 20px #ffffff;
   box-shadow: 0 0 5px #ff0000bb, 0 0 20px #008cff, 0 0 50px #ff4400da,
     0 0 100px #ff0000;
 }
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fffdfd;
+  transition: all 0.3s ease;
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+-webkit-backdrop-filter: blur(6px);
+backdrop-filter: blur(6px);
+border: 1px solid rgba(0,0,0,0.125);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.228);
+  z-index: 999;
+  transition: left 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 20px;
+}
+
+.side-menu a {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fffdfd;
+  margin-bottom: 10px;
+  transition: 0.5s ease;
+}
+
+.side-menu a:hover {
+  color: #ffffff;
+  background: #ff0000;
+  border: 1px solid #eb3908c3;
+  box-shadow: 0 0 5px #ff0000bb, 0 0 20px #008cff, 0 0 50px #ff4400da,
+    0 0 100px #ff0000;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  #nav .navbar {
+    display: none !important; /* Higher specificity to ensure it hides */
+  }
+
+  #nav .hamburger {
+    display: flex !important; /* Show hamburger */
+  }
+}
+
 /* section{
 	padding: 160px 16% 90px;
 } */

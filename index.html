@@ -21,38 +21,37 @@
   </head>
   <body>
     <section id="nav">
-      <nav class="navbar">
-        <h2 class="logo" style="color: aliceblue">
-          Portfo<i style="color: orangered">lio</i>
-        </h2>
+      <nav id="nav">
+        <div class="logo">
+          <img src="path-to-your-logo.png" alt="Logo" />
+        </div>
+        <div class="navbar">
+          <a href="#">Home</a>
+          <a href="#">Services</a>
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="side-menu" id="sideMenu">
+          <a href="#">Home</a>
+          <a href="#">Services</a>
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Contact</a>
+        </div>
       </nav>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About Me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Achievements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Projets</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
     </section>
+
     <section class="home" id="home">
       <video autoplay loop muted plays-inline class="back-video" style="width: 1260px">
-        <source src="nebula.mp4" type="video/mp4" />
+        <source src="images/nebula.mp4" type="video/mp4" />
       </video>
       <div class="home-text top-left">
         <h4>Hello</h4>
@@ -61,6 +60,7 @@
         <a href="" class="btn" target="_blank"><span>Download Resume</span></a>
       </div>
     </section>
+
     <section
       class="about"
       id="about"
@@ -160,6 +160,8 @@
         <a href="#contact" class="btn" id="contact1">Contact Me</a>
       </div>
     </section>
+
+    <section id="tech">
     <div class="inner" style="background-color: black; color: ghostwhite">
       <div class="Tech_header">
         <h1>Languages</h1>
@@ -170,7 +172,7 @@
             <div class="tech_img">
               <img
                 class="skill-icon"
-                src="C.png"
+                src="images/C.png"
                 alt="C Programming Language"
               />
             </div>
@@ -182,7 +184,7 @@
             <div class="tech_img">
               <img
                 class="skill-icon"
-                src="C++.png"
+                src="images/C++.png"
                 alt="C++ Programming Language"
               />
             </div>
@@ -192,7 +194,7 @@
         <div class="skill-box">
           <div class="skill-title">
             <div class="tech_img">
-              <img class="skill-icon" src="html.png" alt="Html" />
+              <img class="skill-icon" src="images/html.png" alt="Html" />
             </div>
             <h3>HTML</h3>
           </div>
@@ -200,15 +202,15 @@
         <div class="skill-box">
           <div class="skill-title">
             <div class="tech_img">
-              <img class="skill-icon" src="css.png" alt="Css" />
+              <img class="skill-icon" src="images/css.png" alt="Css" />
             </div>
-            <h3>Css</h3>
+            <h3>CSS</h3>
           </div>
         </div>
         <div class="skill-box">
           <div class="skill-title">
             <div class="tech_img">
-              <img class="skill-icon" src="js.png" alt="JavaScript" />
+              <img class="skill-icon" src="images/js.png" alt="JavaScript" />
             </div>
             <h3>JavaScript</h3>
           </div>
@@ -216,13 +218,15 @@
         <div class="skill-box">
           <div class="skill-title">
             <div class="tech_img">
-              <img class="skill-icon" src="python.png" alt="Python" />
+              <img class="skill-icon" src="images/python.png" alt="Python" />
             </div>
             <h3>Python</h3>
           </div>
         </div>
       </div>
     </div>
+    </section>
+
     <section class="contact" id="contact">
       <div class="contact-text">
         <h2 style="color: #fff">Contact Me</h2>
@@ -295,5 +299,6 @@
         </div>
       </div>
     </section>
+
   </body>
 </html>
