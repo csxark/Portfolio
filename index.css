@@ -1,82 +1,183 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-    scrollbar-width: 1rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
-html{
-  font-size: 62.5%;
-}
-
-body{
+body {
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
-  background-color: black;
   color: white;
 }
+/* Navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 1rem 2rem;
+}
 
+.logo {
+  font-size: 2rem;
+  color: #ff0000;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.5s ease;
+  text-decoration: none;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+nav a {
+  font-size: 1.5rem;
+  color: white;
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ff0000;
+  filter: drop-shadow(red 0px 2px 9px);
+  transform: scale(0.9);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 995px) {
+  .menu-toggle {
+    display: block;
+    z-index: 9999;
+  }
+
+  nav {
+    position: absolute;
+    display: none;
+    top: 5rem;
+    right: 0;
+    width: 50%;
+    padding: 2rem;
+    background: rgba(2, 0, 0, 0.3);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+  }
+
+  nav.active {
+    display: block;
+    z-index: 9999;
+  }
+
+  nav a {
+    display: block;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    background: none;
+    margin-right: 30px;
+  }
+
+  nav a:hover,
+  nav a.active {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 996px) {
+  .menu-toggle {
+    display: none;
+    z-index: 9999;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: static;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  nav a {
+    margin-left: 2rem;
+    display: inline-block;
+  }
+}
 /* Home */
-.home{
+.home {
   min-height: 100vh;
   padding: 5rem 9% 5rem;
   display: flex;
+  margin-top: -10px;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
   background-color: black;
+  gap: 8rem;
 }
 
-.home .home-content h1{
-  font-size: 4rem;
+.home .home-content h1 {
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.3;
   color: whitesmoke;
 }
 
-span{
+span {
   color: #ff0000;
 }
 
-.home-content h3{
-  font-size: 4rem;
+.home-content h3 {
+  font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 700;
   color: whitesmoke;
 }
 
-.home-content p{
-  font-size: 1.6rem;
+.home-content p {
+  font-size: 1.2rem;
   color: whitesmoke;
 }
 
-.home-img{
+.home-img {
   border-radius: 50%;
 }
 
-.home-img img{
+.home-img img {
   position: relative;
   width: 32vw;
   border-radius: 50%;
-  box-shadow: 0 0 25px solid #b74b4b;
+  filter: drop-shadow(0 0 25px #ff0000a0);
   cursor: pointer;
   transition: 0.2s linear;
 }
 
-.home-img img:hover{
+.home-img img:hover {
   font-size: 1.8rem;
   font-weight: 500;
 }
 
-
-.btn{
+.btn {
   display: inline-block;
   padding: 1rem 2.8rem;
   background-color: black;
@@ -90,32 +191,31 @@ span{
   cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
   transform: scale3d(1.03);
   background-color: #b74b4b;
   color: rgb(0, 0, 0);
   box-shadow: 0 0 25px #b74b4b;
 }
 
-.typing-text{
+.typing-text {
   font-size: 34px;
   font-weight: 600;
   min-width: 280px;
 }
 
-.typing-text span{
+.typing-text span {
   position: relative;
-  
 }
 
-.typing-text span::before{
+.typing-text span::before {
   content: "software Developer";
   color: #ff0000;
   animation: words 12s infinite;
   filter: drop-shadow(red 0px 12px 30px);
 }
 
-.typing-text span::after{
+.typing-text span::after {
   content: "";
   background-color: black;
   position: absolute;
@@ -126,74 +226,78 @@ span{
   animation: cursor 0.6s infinite;
 }
 
-@keyframes cursor{
-  to{
-      border-left: 3px solid #ff0000;
+@keyframes cursor {
+  to {
+    border-left: 3px solid #ff0000;
   }
 }
 
-@keyframes words{
-  0%, 20%{
-      content: "Web Developer";
+@keyframes words {
+  0%,
+  20% {
+    content: "Web Developer";
   }
-  21%, 40%{
-      content: "Developer";
+  21%,
+  40% {
+    content: "Developer";
   }
-  41%, 60%{
-      content: "Web Designer";
+  41%,
+  60% {
+    content: "Web Designer";
   }
-  61%, 80%{
-      content: "Youtuber";
+  61%,
+  80% {
+    content: "Youtuber";
   }
-  81%, 100%{
-      content: "Script Writer";
+  81%,
+  100% {
+    content: "Script Writer";
   }
 }
 
-@media (max-width: 990px){
-  .home{
-      gap: 4rem;
+@media (max-width: 990px) {
+  .home {
+    gap: 4rem;
   }
 }
 
-@media(max-width:650px){
-  .home{
-      flex-direction: column;
+@media (max-width: 650px) {
+  .home {
+    flex-direction: column;
   }
 
-  .home .home-content h3{
-      font-size: 3rem;
+  .home .home-content h3 {
+    font-size: 1.5rem;
   }
 
-  .home-content h1{
-      font-size: 5rem;
+  .home-content h1 {
+    font-size: 3rem;
   }
 
-  .home-img img{
-      width: 70vw;
-      margin-top: 2rem;
+  .home-img img {
+    width: 70vw;
+    margin-top: 0.01rem;
   }
 }
 
 @media only screen and (max-width: 600px) and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
   .home {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .home .home-content h3 {
-      font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .home-content h1 {
-      font-size: 5rem;
+    font-size: 3rem;
   }
 
   .home-img img {
-      width: 70vw;
-      margin-top: 2rem;
+    width: 70vw;
+    margin-top: 0.1rem;
   }
 }
-
 
 /* TECH SKILLS  */
 .Tech_header {
