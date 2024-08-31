@@ -580,24 +580,52 @@ span {
 .modal {
   display: none; 
   position: fixed; 
-  z-index: 1; 
+  z-index: 1000; /* Adjusted z-index for better stacking context */
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Allow scrolling if content overflows */ 
+} 
+#content-modal{
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  color: #12141c;
 }
 
+#name, #email, #message {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #0b0000;
+  border-radius: 100px;
+  box-sizing: border-box; /* Ensure padding doesn't affect overall width */
+}
+label{
+  display: block;
+  font-weight: 900;
+}
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
+  margin: 10% auto; 
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  max-width: 500px; /* Ensures it doesn't grow too wide */
 }
-
+#submit{
+  background-color:rgb(13, 255, 0);
+  font-weight: 600;
+  color: black;
+  width: 20%;
+  margin: 0 37%;
+  border: 2px rgb(3, 255, 78) solid;
+  border-radius: 100px;
+}
+#submit:hover{
+  background-color: rgb(0, 255, 0);
+  filter: drop-shadow(rgb(0, 255, 195) 0 0 5px);
+}
 .close {
   color: #aaa;
   float: right;
