@@ -1,5 +1,4 @@
 // Navbar
-
 // Toggle menu visibility and close menu when clicking outside of it
 document.addEventListener('click', function (event) {
   const nav = document.querySelector('nav');
