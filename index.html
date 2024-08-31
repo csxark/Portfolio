@@ -21,7 +21,7 @@
     <meta http-equiv="refresh" content="1000" />
   </head>
   <body>
-    
+
     <section id="nav">
       <header id="navbar">
         <a href="#" class="logo">Portfolio</a>
@@ -44,11 +44,13 @@
           <img src="images/main.jpeg" alt="Profile Pic">
       </div>
       <div class="home-content">
-          <h1>Hi, It's <span>Alex</span></h1>
+          <h1>Hi, It's <span>Ark</span></h1>
           <h3 class="typing-text">I'm a <span></span></h3>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique doloribus tenetur doloremque, sunt commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam quaerat neque asperiores ea.</p>
       </div>
-  </section>
+      <button id="contactBtn" class="btn">Contact Us</button>
+      
+    </section>
 
     <section id="tech">
     <div class="inner" style="background-color: black; color: ghostwhite">
@@ -188,6 +190,56 @@
         </div>
       </div>
     </section>
+
+<section id="contactmodal">
+  <!-- The Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Send</button>
+      </form>
+  </div>
+</div>
+</section>
+<!-- Include EmailJS library -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+  })();
+
+  // Add this new code
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('contactModal');
+    var btn = document.getElementById('contactBtn');
+    var span = document.getElementsByClassName('close')[0];
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  });
+</script>
+
 
   </body>
 </html>
