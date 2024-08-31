@@ -166,7 +166,6 @@ span {
   position: relative;
   width: 32vw;
   border-radius: 50%;
-  filter: drop-shadow(0 0 25px #ff0000a0);
   cursor: pointer;
   transition: 0.2s linear;
 }
@@ -174,17 +173,19 @@ span {
 .home-img img:hover {
   font-size: 1.8rem;
   font-weight: 500;
+  border: #ff0000 solid 2px;
+  filter: drop-shadow(#ff0000 0 0 15px);
 }
 
 #contactBtn {
-  display:flex;
-  padding: 1rem 2.8rem;
+  display: flex;
+  padding: 1rem 2.5rem;
   background-color: black;
   border-radius: 4rem;
   font-size: 0.9rem;
   color: #ffffff;
   letter-spacing: 0.3rem;
-  font-weight: 900;
+  font-weight: bolder;
   border: 2px solid #b74b4b;
   transition: 0.3s ease;
   cursor: pointer;
@@ -301,6 +302,7 @@ span {
 /* TECH SKILLS  */
 .Tech_header {
   text-align: center;
+  margin-top: -20px;
 }
 
 .Tech_header {
@@ -415,16 +417,16 @@ span {
   z-index: 2;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 995px) {
   .Tcontainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr;
     padding: 2rem 50px;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .Tcontainer {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -578,16 +580,16 @@ span {
 /* Contact Us Modal */
 /* Modal styles */
 .modal {
-  display: none; 
-  position: fixed; 
+  display: none;
+  position: fixed;
   z-index: 1000; /* Adjusted z-index for better stacking context */
   left: 0;
   top: 0;
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  overflow-y: auto; /* Allow scrolling if content overflows */ 
-} 
-#content-modal{
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+#content-modal {
   background: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
@@ -596,25 +598,31 @@ span {
   color: #12141c;
 }
 
-#name, #email, #message {
+#name,
+#email,
+#message {
   width: 100%;
   padding: 12px 20px;
   border: 2px solid #0b0000;
   border-radius: 100px;
   box-sizing: border-box; /* Ensure padding doesn't affect overall width */
 }
-label{
-  display: block;
-  font-weight: 900;
-}
+
 .modal-content {
-  margin: 10% auto; 
+  margin: 10% auto;
   padding: 20px;
   width: 50%;
   max-width: 500px; /* Ensures it doesn't grow too wide */
 }
-#submit{
-  background-color:rgb(13, 255, 0);
+label {
+  display: block;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  filter: drop-shadow(rgb(255, 255, 255) 0 0 2px);
+}
+#submit {
+  background-color: rgb(13, 255, 0);
   font-weight: 600;
   color: black;
   width: 20%;
@@ -622,9 +630,9 @@ label{
   border: 2px rgb(3, 255, 78) solid;
   border-radius: 100px;
 }
-#submit:hover{
+#submit:hover {
   background-color: rgb(0, 255, 0);
-  filter: drop-shadow(rgb(0, 255, 195) 0 0 5px);
+  filter: drop-shadow(rgb(157, 255, 0) 0 0 5px);
 }
 .close {
   color: #aaa;
