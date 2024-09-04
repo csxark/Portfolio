@@ -61,3 +61,30 @@ document.getElementById('contactForm').addEventListener('submit', function (even
       alert(JSON.stringify(err));
     });
 });
+// Loader 
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+  const astronaut = document.querySelector("[data-js='astro']");
+  const boxStars = document.querySelectorAll(".box-of-star1, .box-of-star2, .box-of-star3, .box-of-star4");
+
+  if (loader && astronaut && boxStars.length > 0) {
+    loader.style.display = 'block';
+    astronaut.style.animationPlayState = 'running';
+    boxStars.forEach((box) => {
+      box.style.animationPlayState = 'running';
+    });
+
+    // Hide the loader after 3 seconds
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 0.5s ease-out';
+      
+      // Remove the loader from the DOM after the fade-out effect
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500); // 500ms for the fade-out effect to complete
+    }, 3000); // 3 seconds delay
+  } else {
+    console.error("Loader elements not found");
+  }
+});

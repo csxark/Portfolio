@@ -25,6 +25,56 @@
     <meta http-equiv="refresh" content="1000" />
   </head>
   <body>
+    <div id="loader">
+      <div class="astronaut" data-js="astro">
+        <div class="head"></div>
+        <div class="arm arm-left"></div>
+        <div class="arm arm-right"></div>
+        <div class="body">
+          <div class="panel"></div>
+        </div>
+        <div class="leg leg-left"></div>
+        <div class="leg leg-right"></div>
+        <div class="schoolbag"></div>
+      </div>
+      <div class="box-of-star1">
+        <div class="star star-position1"></div>
+        <div class="star star-position2"></div>
+        <div class="star star-position3"></div>
+        <div class="star star-position4"></div>
+        <div class="star star-position5"></div>
+        <div class="star star-position6"></div>
+        <div class="star star-position7"></div>
+      </div>
+      <div class="box-of-star2">
+        <div class="star star-position1"></div>
+        <div class="star star-position2"></div>
+        <div class="star star-position3"></div>
+        <div class="star star-position4"></div>
+        <div class="star star-position5"></div>
+        <div class="star star-position6"></div>
+        <div class="star star-position7"></div>
+      </div>
+      <div class="box-of-star3">
+        <div class="star star-position1"></div>
+        <div class="star star-position2"></div>
+        <div class="star star-position3"></div>
+        <div class="star star-position4"></div>
+        <div class="star star-position5"></div>
+        <div class="star star-position6"></div>
+        <div class="star star-position7"></div>
+      </div>
+      <div class="box-of-star4">
+        <div class="star star-position1"></div>
+        <div class="star star-position2"></div>
+        <div class="star star-position3"></div>
+        <div class="star star-position4"></div>
+        <div class="star star-position5"></div>
+        <div class="star star-position6"></div>
+        <div class="star star-position7"></div>
+      </div>
+    </div>
+
     <section id="nav">
       <header id="navbar">
         <a href="#" class="logo">Portfolio</a>
@@ -303,6 +353,29 @@
             modal.style.display = "none";
           }
         };
+      });
+
+      // Loader
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        
+        if (loader) {
+          console.log("Loader found, starting animation");
+          
+          // Keep the loader visible for 3 seconds
+          setTimeout(() => {
+            console.log("Hiding loader");
+            loader.style.opacity = '0';
+            
+            // Remove the loader from the DOM after the fade-out effect
+            setTimeout(() => {
+              loader.style.display = 'none';
+              console.log("Loader removed");
+            }, 500); // 500ms for the fade-out effect to complete
+          }, 3000); // 3 seconds delay
+        } else {
+          console.error("Loader element not found");
+        }
       });
     </script>
   </body>
