@@ -73,7 +73,6 @@ window.addEventListener("load", function () {
     boxStars.forEach((box) => {
       box.style.animationPlayState = 'running';
     });
-
     // Hide the loader after 3 seconds
     setTimeout(() => {
       loader.style.opacity = '0';
@@ -82,8 +81,8 @@ window.addEventListener("load", function () {
       // Remove the loader from the DOM after the fade-out effect
       setTimeout(() => {
         loader.style.display = 'none';
-      }, 500); // 500ms for the fade-out effect to complete
-    }, 3000); // 3 seconds delay
+      }, 100); // 500ms for the fade-out effect to complete
+    }, 2500); // 3 seconds delay
   } else {
     console.error("Loader elements not found");
   }
