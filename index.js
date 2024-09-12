@@ -87,3 +87,35 @@ window.addEventListener("load", function () {
     console.error("Loader elements not found");
   }
 });
+
+// Projects
+const projects = [
+    { title: 'Project 1', description: 'A brief description of project 1', codeLink: 'https://github.com/username/project1', demoLink: 'https://youtube.com/watch?v=demo1', image: 'images/project1.jpg' },
+    { title: 'Project 2', description: 'A brief description of project 2', codeLink: 'https://github.com/username/project2', demoLink: 'https://youtube.com/watch?v=demo2', image: 'images/project2.jpg' },
+    // Add more projects as needed
+];
+
+function createProjectElement(project) {
+    const projectElement = document.createElement('div');
+    projectElement.className = 'project-item';
+    projectElement.innerHTML = `
+        <div class="project-image" style="background-image: url('${project.image}')"></div>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="project-links">
+            <a href="${project.codeLink}" target="_blank" rel="noopener noreferrer" class="btn-hover">View Code</a>
+            <a href="${project.demoLink}" target="_blank" rel="noopener noreferrer" class="btn-hover">Watch Demo</a>
+        </div>
+    `;
+    return projectElement;
+}
+
+function renderProjects() {
+    const projectGrid = document.querySelector('.project-grid');
+    projects.forEach((project) => {
+        projectGrid.appendChild(createProjectElement(project));
+    });
+}
+
+// Call the function to render projects when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', renderProjects);
