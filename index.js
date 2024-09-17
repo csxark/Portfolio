@@ -50,8 +50,8 @@ document.getElementById('contactForm').addEventListener('submit', function (even
   event.preventDefault();
 
   // Collect the form data
-  const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
-  const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+  const serviceID = 'service_4e5pu8a'; // Replace with your EmailJS service ID
+  const templateID = 'template_2oqughm'; // Replace with your EmailJS template ID
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
