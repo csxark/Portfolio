@@ -49,9 +49,9 @@ window.onclick = function (event) {
 document.getElementById('contactForm').addEventListener('submit', function (event) {
   event.preventDefault();
 
-  // Collect the form data
+  // Collect the form data 
   const serviceID = 'service_4e5pu8a'; // Replace with your EmailJS service ID
-  const templateID = 'template_2oqughm'; // Replace with your EmailJS template ID
+  const templateID = 'template_37pbdwk'; // Replace with your EmailJS template ID
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
