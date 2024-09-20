@@ -82,7 +82,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <nav>
-          <a href="#" class="active">Home</a>
+          <a href="#home" class="active">Home</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
@@ -271,11 +271,19 @@
 
 <section id="experience" style="background-color: black; color: ghostwhite">
   <div class="Tech_header">
-    <h1>Experience</h1>
-  </div>    
+    <h1>Experience</h1>  
+  </div>
+  <div class="experience-grid m-5">
+      <p>Currently looking for Internships/Full-time opportunities</p>
+    </div>    
   <div class="Tech_header">
     <h1>Certifications</h1>
   </div>    
+  <div class="experience-grid m-5">
+    <p>
+      Adding Soon... 
+    </p>
+  </div>
 </section>
 
     <section id="footer">
@@ -344,31 +352,46 @@
         <div class="modal-content" id="content-modal">
           <span class="close">&times;</span>
           <h1 style="text-align: center; font-size: 300%">Contact</h1>
-          <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Message:</label>
+            <p id="form-status" style="font-size: 1.5rem;"></p>
+          <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+      
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+      
+            <label for="message">Message</label>
             <textarea id="message" name="message" required></textarea>
-
-            <button type="submit" id="submit" onclick="sendEmail()">Send</button>
+      
+            <button type="submit" id="submit">Send</button>
           </form>
         </div>
       </div>
     </section>
 
     <!-- Include EmailJS library -->
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"
-    ></script>
-    <script>
-      (function () {
-        emailjs.init("J-8IMRDU9_P7osnkr"); // Replace with your EmailJS public key
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        // Initialize EmailJS
+        emailjs.init('J-8IMRDU9_P7osnkr');
       })();
+      
+      // Handle the form submission
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+  
+        // Send the form data via EmailJS
+        emailjs.sendForm('service_4e5pu8a', 'template_37pbdwk', this)
+          .then(function() {
+            document.getElementById('form-status').textContent = 'Message sent successfully!';
+          }, function(error) {
+            document.getElementById('form-status').textContent = 'Failed to send message. Please try again later.';
+          });
+  
+        // Clear the form fields
+        this.reset();
+      });
 
       // Add this new code
       document.addEventListener("DOMContentLoaded", function () {

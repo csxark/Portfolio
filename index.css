@@ -433,8 +433,8 @@ span {
 /* Contact Us Modal */
 /* Modal styles */
 .modal { 
-  display: none;
-  position: fixed;
+  display:none;
+  position:relative;
   z-index: 1000; /* Adjusted z-index for better stacking context */
   left: 0; 
   top: 0;
@@ -462,7 +462,7 @@ span {
 }
 
 .modal-content {
-  margin: 10% auto;
+  margin: 10px auto;
   padding: 20px;
   width: 50%;
   max-width: 500px; /* Ensures it doesn't grow too wide */
@@ -997,6 +997,11 @@ position: fixed;
 }
 
 /* Experience CSS */
+#experience{
+  padding: 2rem;
+  background-color: #000000;
+  margin-top: -9px;
+}
 /* Contact CSS */
         .portfolio-footer {
             background-color: #000000;

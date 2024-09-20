@@ -44,24 +44,7 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 }
-
-// Handle form submission
-function sendEmail(){
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var Message = document.getElementById("message").value;
-}
-  // Collect the form data 
-  const serviceID = 'service_4e5pu8a'; // Replace with your EmailJS service ID
-  const templateID = 'template_37pbdwk'; // Replace with your EmailJS template ID
-
-  emailjs.send(serviceID, templateID, this)
-    .then(() => { 
-      alert('Message sent successfully!');
-      modal.style.display = "none";
-    }, (err) => {
-      alert(JSON.stringify(err));
-    });
+  
 // Loader 
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
