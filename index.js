@@ -66,7 +66,7 @@ window.addEventListener("load", function () {
       setTimeout(() => {
         loader.style.display = 'none';
       }, 100); // 500ms for the fade-out effect to complete
-    }, 2500); // 3 seconds delay
+    }, 2500); // 2.5 seconds delay
   } else {
     console.error("Loader elements not found");
   }
