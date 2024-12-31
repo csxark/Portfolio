@@ -103,3 +103,25 @@ function renderProjects() {
 
 // Call the function to render projects when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', renderProjects);
+
+function openImageModal(imgElement) {
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+    
+  modalImage.src = imgElement.src;
+  modalTitle.textContent = imgElement.dataset.title;
+  modalDescription.textContent = imgElement.dataset.description;
+    
+  const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+  modal.show();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize carousel with infinite loop
+  new bootstrap.Carousel(document.getElementById('imageCarousel'), {
+      interval: 3000,
+      wrap: true,
+      touch: true
+  });
+});
