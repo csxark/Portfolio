@@ -954,6 +954,7 @@ label {
 #education {
   padding: 2rem;
   background-color: #000000;
+  margin-top: -10px;
 }
 
 .education-grid {
@@ -1002,6 +1003,12 @@ label {
   margin-top: -9px;
 }
 /* Certifications CSS */
+#certifications {
+  padding: 2rem;
+  background-color: #000000;
+  margin-top: -90px;
+  margin-bottom: -50px;
+}
 /* Carousel Core Styles */
 .carousel-container {
   max-width: 1200px;
@@ -1149,8 +1156,11 @@ label {
 
 /* Footer CSS */
 #footer {
-  margin: auto -70px;
-  margin-bottom: -80px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: -50px;
 }
 
 .portfolio-footer {
