@@ -246,13 +246,13 @@ span {
   60% {
     content: "Web Designer";
   }
-  61%,
+  /* 61%,
   80% {
-    content: "Youtuber";
-  }
-  81%,
+    content: "";
+  } */
+  61%,
   100% {
-    content: "Script Writer";
+    content: "Content Writer";
   }
 }
 
