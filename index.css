@@ -1386,4 +1386,18 @@ label {
   margin-right: 7px;
 }
 
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 768px) {
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+}
+
 
