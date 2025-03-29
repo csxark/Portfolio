@@ -45,28 +45,74 @@ window.onclick = function (event) {
   }
 }
   
-// Loader 
+// Enhanced Loader with Progress Indicator
+document.addEventListener("DOMContentLoaded", function() {
+  // Start with opacity 0 and fade in
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.opacity = '0';
+    loader.style.display = 'flex';
+    loader.style.transition = 'opacity 0.5s ease-in';
+    
+    // Create a progress counter
+    const progressCounter = document.createElement('div');
+    progressCounter.className = 'loading-progress';
+    progressCounter.innerHTML = '<span>0%</span>';
+    progressCounter.style.position = 'absolute';
+    progressCounter.style.bottom = '30%';
+    progressCounter.style.left = '0';
+    progressCounter.style.right = '0';
+    progressCounter.style.textAlign = 'center';
+    progressCounter.style.color = '#fff';
+    progressCounter.style.fontSize = '1.5rem';
+    progressCounter.style.fontWeight = 'bold';
+    loader.appendChild(progressCounter);
+    
+    // Fade in the loader
+    setTimeout(() => {
+      loader.style.opacity = '1';
+    }, 100);
+  }
+});
+
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
   const astronaut = document.querySelector("[data-js='astro']");
   const boxStars = document.querySelectorAll(".box-of-star1, .box-of-star2, .box-of-star3, .box-of-star4");
+  const progressCounter = document.querySelector('.loading-progress span');
 
   if (loader && astronaut && boxStars.length > 0) {
-    loader.style.display = 'block';
+    // Ensure animations are running
     astronaut.style.animationPlayState = 'running';
     boxStars.forEach((box) => {
       box.style.animationPlayState = 'running';
     });
-    // Hide the loader after 3 seconds
-    setTimeout(() => {
-      loader.style.opacity = '0';
-      loader.style.transition = 'opacity 0.5s ease-out';
+    
+    // Simulate loading progress
+    let progress = 0;
+    const progressInterval = setInterval(() => {
+      progress += Math.floor(Math.random() * 10) + 1;
+      if (progress > 100) progress = 100;
       
-      // Remove the loader from the DOM after the fade-out effect
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 100); // 500ms for the fade-out effect to complete
-    }, 2500); // 2.5 seconds delay
+      if (progressCounter) {
+        progressCounter.textContent = `${progress}%`;
+      }
+      
+      if (progress === 100) {
+        clearInterval(progressInterval);
+        
+        // Complete loading and fade out
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.transition = 'opacity 0.5s ease-out';
+          
+          // Remove the loader from the DOM after the fade-out effect
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 500); // Consistent 500ms for the fade-out effect
+        }, 500); // Small delay after reaching 100%
+      }
+    }, 200); // Update progress every 200ms
   } else {
     console.error("Loader elements not found");
   }
