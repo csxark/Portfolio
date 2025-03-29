@@ -308,21 +308,33 @@
     <section id="carousel-section certificates">
       <div class="carousel-container">
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+          
           <div class="carousel-inner">
             <!-- First Slide -->
             <div class="carousel-item active">
               <div class="carousel-grid">
                 <div class="grid-item" data-aos="fade-up">
+                  <div class="certificate-badge">Workshop</div>
                   <img src="images/certificates/Certificate_isro_ai_ml_page-0001.jpg" class="carousel-img" alt="AI/ML By Isro" 
                        data-title="AI/ML By Isro" 
                        data-description="Attended a workshop on AI/ML by ISRO. In this workshop, I learned about the basics of AI/ML and how it is used in space research and GeoData analysis."
+                       data-date="March 2024"
+                       data-skills="Machine Learning, AI, Space Technology"
                        onclick="openImageModal(this)">
                   <div class="grid-caption">AI/ML By Isro</div>
                 </div>
                 <div class="grid-item" data-aos="fade-up">
+                  <div class="certificate-badge">Contest</div>
                   <img src="images/certificates/nclark.png" class="carousel-img" alt="National Coding League By Scaler" 
                        data-title="National Coding League By Scaler"
-                       data-description="National Coding League By Scaler is a coding competition where I participated and secured a good rank. I learned a lot about competitive programming and problem-solving." 
+                       data-description="National Coding League By Scaler is a coding competition where I participated and secured a good rank. I learned a lot about competitive programming and problem-solving."
+                       data-date="February 2024"
+                       data-skills="Competitive Programming, Data Structures, Algorithms"
                        onclick="openImageModal(this)">
                   <div class="grid-caption">National Coding League By Scaler</div>
                 </div>
@@ -332,18 +344,24 @@
             <div class="carousel-item">
               <div class="carousel-grid">
                 <div class="grid-item" data-aos="fade-up">
+                  <div class="certificate-badge">Internship</div>
                   <img src="images/certificates/scalerYIIC.png" class="carousel-img" alt="Scaler YIIC" 
                        data-title="Young Innovators Internship Challenge by Scaler"
                        data-description="Scaler YIIC is a 6-week workshop in which I learned about various Technologies, Personal Branding, and Career Development. I learned a lot about the industry and how to build a career in the tech industry."
+                       data-date="January 2024" 
+                       data-skills="Career Development, Technology, Personal Branding"
                        onclick="openImageModal(this)">
-                  <div class="grid-caption">Young Innovators Internship Challenge BY Scaler</div>
+                  <div class="grid-caption">Young Innovators Internship Challenge</div>
                 </div>
                 <div class="grid-item" data-aos="fade-up">
+                  <div class="certificate-badge">Hackathon</div>
                   <img src="images/certificates/muj_elicit.png" class="carousel-img" alt="Elicit By Manipal University Jaipur ACM Student Chapter" 
                        data-title="Elicit'24 at Manipal University Jaipur"
-                       data-description="Elicit'24 is a event organized in Manipal University Jaipur by ACM Student Chapter. I participated in kagglethon. I learned a lot about Data Science and Machine Learning." 
+                       data-description="Elicit'24 is a event organized in Manipal University Jaipur by ACM Student Chapter. I participated in kagglethon. I learned a lot about Data Science and Machine Learning."
+                       data-date="April 2024"
+                       data-skills="Data Science, Machine Learning, Kaggle" 
                        onclick="openImageModal(this)"> 
-                  <div class="grid-caption">Elicit'24 at Manipal University Jaipur ACM Student Chapter</div>
+                  <div class="grid-caption">Elicit'24 at MUJ</div>
                 </div>
               </div>
             </div>
@@ -368,6 +386,22 @@
             <div class="modal-body">
               <img id="modalImage" src="" alt="Modal Image">
               <div class="modal-description mt-3" id="modalDescription"></div>
+              <div class="certificate-details mt-4">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="detail-label">Completed on</div>
+                    <div class="detail-value" id="modalDate"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="detail-label">Skills Gained</div>
+                    <div class="detail-value" id="modalSkills"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <a id="viewCertificate" href="#" class="btn btn-danger" target="_blank">View Full Certificate</a>
             </div>
           </div>
         </div>

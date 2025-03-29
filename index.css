@@ -1082,8 +1082,8 @@ label {
 .carousel-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 20px;
+  gap: 25px;
+  padding: 30px;
 }
 
 .grid-item {
@@ -1093,12 +1093,14 @@ label {
   box-shadow: 0 8px 20px rgba(255,255,255,0.1);
   background: #1a1a1a;
   transition: all 0.4s ease;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .grid-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  filter: drop-shadow(rgb(255, 0, 0) 0 0 5px);
+  transform: translateY(-8px) rotateY(5deg);
+  box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
 }
 
 .carousel-img {
@@ -1106,11 +1108,14 @@ label {
   height: 350px;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 0, 0, 0.1);
 }
 
 .carousel-img:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .grid-caption {
@@ -1123,6 +1128,64 @@ label {
   color: rgb(255, 255, 255);
   font-weight: 600;
   font-size: 1.2rem;
+  transform: translateZ(20px);
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-caption::after {
+  content: "Click to view";
+  font-size: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.8);
+  padding: 4px 10px;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .grid-caption::after {
+  opacity: 1;
+}
+
+/* Certificate badges */
+.certificate-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+  transform: translateZ(20px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel controls */
+.carousel-control-prev, .carousel-control-next {
+  width: 10%;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  opacity: 1;
+  background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.carousel-control-next:hover {
+  background: linear-gradient(270deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 20px;
+  background-size: 50%;
 }
 
 /* Modal Enhancements */
@@ -1135,32 +1198,46 @@ label {
   background-color: rgb(0, 0, 0);
   transition: all 0.3s ease;
 }
+
 .modal-content {
-  background-color: #000000;
+  background-color: #111111;
   color: ghostwhite;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(255,0,0,0.3);
   overflow: hidden;
   transition: all 0.3s ease;
   margin: 0 auto;
 }
 
 .modal-header {
-  border-bottom: 1px solid rgba(255, 0, 0, 0.1);
-  padding: 20px;
-  background: #000000;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 20px 25px;
+  background: #111111;
+  position: relative;
+}
+
+.modal-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff0000, transparent);
 }
 
 .modal-title {
   color: ghostwhite;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .modal-body {
-  padding: 25px;
-  background: #000000;
+  padding: 30px;
+  background: #111111;
   color: ghostwhite;
 }
 
@@ -1169,16 +1246,31 @@ label {
   max-height: 75vh;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(249, 0, 0, 0.3);
+  box-shadow: 0 5px 20px rgba(249, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+#modalImage:hover {
+  transform: scale(1.02);
 }
 
 .modal-description {
   text-align: left;
-  padding: 20px;
+  padding: 25px;
   color: #e0e0e0;
   font-size: 1.1rem;
   line-height: 1.8;
   margin-top: 20px;
+  background: rgba(255, 0, 0, 0.05);
+  border-radius: 10px;
+  border-left: 3px solid #ff0000;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn-close {
@@ -1186,10 +1278,12 @@ label {
   padding: 10px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+  border-radius: 50%;
 }
 
 .btn-close:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 /* Responsive Design */
@@ -1212,6 +1306,11 @@ label {
   .grid-caption {
       padding: 15px;
       font-size: 1.1rem;
+  }
+  
+  .certificate-badge {
+      font-size: 0.7rem;
+      padding: 3px 8px;
   }
 }
 
@@ -1458,6 +1557,156 @@ label {
 @media screen and (max-width: 768px) {
   [data-aos] {
     pointer-events: auto !important;
+  }
+}
+
+/* Certificate details */
+.certificate-details {
+  background-color: rgba(255, 0, 0, 0.03);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 25px;
+  border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Badge styles for skills */
+.badge {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.2s ease;
+  background-color: #ff0000 !important;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+}
+
+/* Modal footer */
+.modal-footer {
+  border-top: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 15px 25px;
+}
+
+.btn-danger {
+  background-color: #ff0000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: #e00000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #444;
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+  margin-bottom: -10px;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background-color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* Floating animation for grid items */
+.grid-item.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotateY(5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(8deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(5deg);
+  }
+}
+
+/* Certificate card improvements */
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,0,0,0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.grid-item:hover::before {
+  opacity: 1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 576px) {
+  .certificate-details .row {
+    flex-direction: column;
+  }
+  
+  .certificate-details .col-md-6 {
+    margin-bottom: 15px;
+  }
+  
+  .modal-footer {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .carousel-img {
+    height: 250px;
   }
 }
 

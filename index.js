@@ -154,10 +154,38 @@ function openImageModal(imgElement) {
   const modalImage = document.getElementById('modalImage');
   const modalTitle = document.getElementById('modalTitle');
   const modalDescription = document.getElementById('modalDescription');
+  const modalDate = document.getElementById('modalDate');
+  const modalSkills = document.getElementById('modalSkills');
+  const viewCertificateBtn = document.getElementById('viewCertificate');
     
   modalImage.src = imgElement.src;
   modalTitle.textContent = imgElement.dataset.title;
   modalDescription.textContent = imgElement.dataset.description;
+  
+  // Set additional certificate details
+  if (imgElement.dataset.date) {
+    modalDate.textContent = imgElement.dataset.date;
+  } else {
+    modalDate.textContent = 'N/A';
+  }
+  
+  if (imgElement.dataset.skills) {
+    // Create skill badges
+    modalSkills.innerHTML = '';
+    const skills = imgElement.dataset.skills.split(',');
+    
+    skills.forEach(skill => {
+      const badge = document.createElement('span');
+      badge.className = 'badge bg-danger me-2 mb-2';
+      badge.textContent = skill.trim();
+      modalSkills.appendChild(badge);
+    });
+  } else {
+    modalSkills.textContent = 'N/A';
+  }
+  
+  // Set the view certificate link to open the full image in a new tab
+  viewCertificateBtn.href = imgElement.src;
     
   const modal = new bootstrap.Modal(document.getElementById('imageModal'));
   modal.show();
@@ -166,8 +194,31 @@ function openImageModal(imgElement) {
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize carousel with infinite loop
   new bootstrap.Carousel(document.getElementById('imageCarousel'), {
-      interval: 3000,
+      interval: 5000,  // Increased interval for better viewing
       wrap: true,
       touch: true
+  });
+  
+  // Add keyboard navigation for certificates
+  document.addEventListener('keydown', function(e) {
+    if (document.querySelector('#imageCarousel')) {
+      const carousel = bootstrap.Carousel.getInstance(document.getElementById('imageCarousel'));
+      if (e.key === 'ArrowLeft') {
+        carousel.prev();
+      } else if (e.key === 'ArrowRight') {
+        carousel.next();
+      }
+    }
+  });
+  
+  // Add floating labels for certificate cards when hovered
+  const gridItems = document.querySelectorAll('.grid-item');
+  gridItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.classList.add('floating');
+    });
+    item.addEventListener('mouseleave', function() {
+      this.classList.remove('floating');
+    });
   });
 });
