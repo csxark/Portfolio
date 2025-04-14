@@ -1,219 +1,308 @@
 /* Certifications CSS */
 #certifications {
-    padding: 2rem;
-    background-color: #000000;
-    margin-top: -90px;
-    margin-bottom: -50px;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+  margin-top: -90px;
+  margin-bottom: -50px;
+}
+
+/* Carousel Core Styles */
+.carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  background-color: black;
+  color: ghostwhite;
+}
+
+.carousel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.grid-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 0, 0, 0.3);
+  box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.grid-item:hover .carousel-img {
+  transform: scale(1.05);
+}
+
+.grid-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-item:hover .grid-caption {
+  transform: translateY(0);
+}
+
+.grid-caption::after {
+  content: "Click to view";
+  font-size: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.8);
+  padding: 4px 10px;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .grid-caption::after {
+  opacity: 1;
+}
+
+/* Certificate badges */
+.certificate-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  transform: translateZ(20px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel controls */
+.carousel-control-prev, .carousel-control-next {
+  width: 5%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-container:hover .carousel-control-prev, .carousel-container:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.carousel-control-next:hover {
+  background: linear-gradient(270deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 20px;
+  background-size: 50%;
+}
+
+/* Certificate details */
+.certificate-details {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.detail-label {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-value {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Badge styles for skills */
+.badge {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.2s ease;
+  background-color: #ff0000 !important;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+  bottom: -3rem;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 8px;
+  background-color: rgba(255, 0, 0, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background-color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* Floating animation for grid items */
+.grid-item.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotateY(5deg);
   }
-  
-  /* Carousel Core Styles */
-  .carousel-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 15px;
-    background-color: black;
-    color: ghostwhite;
+  50% {
+    transform: translateY(-10px) rotateY(8deg);
   }
-  
+  100% {
+    transform: translateY(0) rotateY(5deg);
+  }
+}
+
+/* Certificate card improvements */
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,0,0,0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.grid-item:hover::before {
+  opacity: 1;
+}
+
+/* Modal Styling */
+.modal-content {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.modal-title {
+  color: #ff0000;
+  font-size: 1.8rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+#modalImage {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+}
+
+.modal-description {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-danger {
+  background: #ff0000;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
   .carousel-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 30px;
+    grid-template-columns: 1fr;
   }
-  
-  .grid-item {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(255,255,255,0.1);
-    background: #1a1a1a;
-    transition: all 0.4s ease;
-    height: 100%;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-  }
-  
-  .grid-item:hover {
-    transform: translateY(-8px) rotateY(5deg);
-    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
-  }
-  
+
   .carousel-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.5s ease, filter 0.3s ease;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 0, 0, 0.1);
+    height: 250px;
   }
-  
-  .carousel-img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1) contrast(1.1);
-  }
-  
-  .grid-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    font-size: 1.2rem;
-    transform: translateZ(20px);
-    border-radius: 0 0 15px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .grid-caption::after {
-    content: "Click to view";
-    font-size: 0.8rem;
-    background-color: rgba(255, 0, 0, 0.8);
-    padding: 4px 10px;
-    border-radius: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .grid-item:hover .grid-caption::after {
-    opacity: 1;
-  }
-  
-  /* Certificate badges */
+
   .certificate-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(255, 0, 0, 0.8);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: bold;
-    z-index: 2;
-    transform: translateZ(20px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 0.4rem 0.8rem;
   }
-  
-  /* Carousel controls */
-  .carousel-control-prev, .carousel-control-next {
-    width: 10%;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+
+  .modal-title {
+    font-size: 1.5rem;
   }
-  
-  .carousel-control-prev:hover, .carousel-control-next:hover {
-    opacity: 1;
-    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+
+  .modal-description {
+    font-size: 1rem;
   }
-  
-  .carousel-control-next:hover {
-    background: linear-gradient(270deg, rgba(0,0,0,0.5) 0%, transparent 100%);
-  }
-  
-  .carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: rgba(255, 0, 0, 0.6);
-    border-radius: 50%;
-    padding: 20px;
-    background-size: 50%;
-  }
-  
-  /* Certificate details */
-  .certificate-details {
-    background-color: rgba(255, 0, 0, 0.03);
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 25px;
-    border: 1px solid rgba(255, 0, 0, 0.1);
-  }
-  
-  .detail-label {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .detail-value {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #fff;
-  }
-  
-  /* Badge styles for skills */
-  .badge {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    border-radius: 20px;
-    font-weight: 500;
-    display: inline-block;
-    transition: all 0.2s ease;
-    background-color: #ff0000 !important;
-  }
-  
-  .badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
-  }
-  
-  /* Carousel indicators */
-  .carousel-indicators {
-    margin-bottom: -10px;
-  }
-  
-  .carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 0, 0, 0.5);
-    margin: 0 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .carousel-indicators button.active {
-    background-color: #ff0000;
-    transform: scale(1.2);
-  }
-  
-  /* Floating animation for grid items */
-  .grid-item.floating {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0) rotateY(5deg);
-    }
-    50% {
-      transform: translateY(-10px) rotateY(8deg);
-    }
-    100% {
-      transform: translateY(0) rotateY(5deg);
-    }
-  }
-  
-  /* Certificate card improvements */
-  .grid-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255,0,0,0.1) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  .grid-item:hover::before {
-    opacity: 1;
-  }
+}

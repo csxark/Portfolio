@@ -1,471 +1,779 @@
 @media (max-width: 995px) {
-    .menu-toggle {
-      display: block;
-      z-index: 9999;
+  .menu-toggle {
+    display: block;
+    z-index: 9999;
+  }
+
+  nav {
+    position: fixed;
+    display: none;
+    top: 4rem;
+    right: 1rem;
+    width: 80%;
+    max-width: 300px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  nav.active {
+    display: flex;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
-  
-    nav {
-      position: fixed;
-      display: none;
-      top: 4rem;
-      right: 1rem;
-      width: 80%;
-      max-width: 300px;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 10px;
-      box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
-      border: 1px solid rgba(255, 0, 0, 0.1);
-      z-index: 1000;
-    }
-  
-    nav.active {
-      display: block;
-      animation: slideIn 0.3s ease-out;
-    }
-  
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    nav a {
-      display: block;
-      font-size: 1.5rem;
-      margin: 2rem 0;
-      background: none;
-      margin-right: 30px;
-    }
-  
-    nav a:hover,
-    nav a.active {
-      padding: 1rem;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  
-  @media (min-width: 996px) {
-    .menu-toggle {
-      display: none;
-      z-index: 9999;
+
+  nav a {
+    display: block;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    background: none;
+    margin-right: 30px;
+  }
+
+  nav a:hover,
+  nav a.active {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 996px) {
+  .menu-toggle {
+    display: none;
+    z-index: 9999;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: static;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  nav a {
+    margin-left: 2rem;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 990px) {
+  .home {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .home .home-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    margin-top: 0.01rem;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+  .home {
+    flex-direction: column;
+  }
+
+  .home .home-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    margin-top: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .Tcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .tech_img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .Tcontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .Tcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  #submit {
+    width: 100%;
+    margin: 0;
+  }
+
+  #name,
+  #email,
+  #message {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .carousel-img {
+    height: 250px;
+  }
+
+  .grid-caption {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .certificate-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info,
+  .footer-social {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .home {
+    padding: 3rem 5% 3rem;
+  }
+
+  .home .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .typing-text {
+    font-size: 1.5rem;
+    min-width: 200px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #contactBtn, #resumeBtn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 995px) {
+  nav {
+    position: fixed;
+    display: none;
+    top: 4rem;
+    right: 1rem;
+    width: 80%;
+    max-width: 300px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: block;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
-  
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      position: static;
-      width: auto;
-      padding: 0;
-      background-color: transparent;
-      border: none;
-    }
-  
-    nav a {
-      margin-left: 2rem;
-      display: inline-block;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  
-  @media (max-width: 990px) {
-    .home {
-      gap: 4rem;
-    }
+}
+
+@media screen and (max-width: 995px) {
+  .Tcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .tech_img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .Tcontainer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  #submit {
+    width: 100%;
+    margin: 0;
+  }
+
+  #name,
+  #email,
+  #message {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .carousel-img {
+    height: 250px;
+  }
+
+  .grid-caption {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .certificate-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .wrapper {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .wrapper .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-info {
+    padding: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tech-tags {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .btn-hover {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  [data-aos] {
+    pointer-events: auto !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .certificate-details .row {
+    flex-direction: column;
   }
   
-  @media (max-width: 650px) {
-    .home {
-      flex-direction: column;
-    }
-  
-    .home .home-content h3 {
-      font-size: 1.5rem;
-    }
-  
-    .home-content h1 {
-      font-size: 3rem;
-    }
-  
-    .home-img img {
-      width: 70vw;
-      margin-top: 0.01rem;
-    }
+  .certificate-details .col-md-6 {
+    margin-bottom: 15px;
   }
   
-  @media only screen and (max-width: 600px) and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
-    .home {
-      flex-direction: column;
-    }
-  
-    .home .home-content h3 {
-      font-size: 1.5rem;
-    }
-  
-    .home-content h1 {
-      font-size: 3rem;
-    }
-  
-    .home-img img {
-      width: 70vw;
-      margin-top: 0.1rem;
-    }
+  .modal-footer {
+    flex-direction: column-reverse;
+    gap: 10px;
   }
   
-  @media screen and (max-width: 995px) {
-    .Tcontainer {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 1rem;
-      gap: 1.5rem;
-    }
-  
-    .tech_img {
-      width: 70px;
-      height: 70px;
-    }
-  
-    .skill-icon {
-      width: 40px;
-      height: 40px;
-    }
+  .btn {
+    width: 100%;
   }
   
-  @media screen and (max-width: 750px) {
-    .Tcontainer {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .carousel-img {
+    height: 250px;
   }
-  
-  @media screen and (max-width: 576px) {
-    .Tcontainer {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 0.5rem;
-      gap: 1rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .modal-content {
-      width: 90%;
-      margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .carousel-grid {
+      grid-template-columns: repeat(1,1fr);
+      gap: 20px;
       padding: 15px;
-    }
-  
-    #submit {
-      width: 100%;
-      margin: 0;
-    }
-  
-    #name,
-    #email,
-    #message {
-      padding: 10px 15px;
-    }
   }
   
-  @media (max-width: 768px) {
-    .carousel-grid {
-      grid-template-columns: 1fr;
-      gap: 15px;
-      padding: 10px;
-    }
+  .carousel-img {
+      height: 300px;
+  }
   
-    .carousel-img {
-      height: 250px;
-    }
+  .modal-dialog {
+      margin: 15px;
+      max-width: 95%;
+  }
   
-    .grid-caption {
-      font-size: 1rem;
+  .grid-caption {
       padding: 15px;
-    }
+      font-size: 1.1rem;
+  }
   
-    .certificate-badge {
+  .certificate-badge {
       font-size: 0.7rem;
       padding: 3px 8px;
-    }
   }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-info,
-    .footer-social {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
   }
-  
-  @media (max-width: 1200px) {
-    .project-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+
+  .home {
+    padding: 6rem 5%;
+    gap: 4rem;
   }
-  
-  @media (max-width: 768px) {
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
+
+  .Tech_header h1 {
+    font-size: 2.2rem;
   }
-  
-  @media (max-width: 768px) {
-    .education-grid {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    html {
-      font-size: 14px;
-    }
-  
-    .home {
-      padding: 3rem 5% 3rem;
-    }
-  
-    .home .home-content h1 {
-      font-size: 2rem;
-    }
-  
-    .home-content h3 {
-      font-size: 1.5rem;
-    }
-  
-    .home-content p {
-      font-size: 1rem;
-    }
-  
-    .typing-text {
-      font-size: 1.5rem;
-      min-width: 200px;
-    }
-  
-    .button-container {
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-    }
-  
-    #contactBtn, #resumeBtn {
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-    }
+
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 8rem;
   }
-  
-  @media (max-width: 995px) {
-    nav {
-      position: fixed;
-      display: none;
-      top: 4rem;
-      right: 1rem;
-      width: 80%;
-      max-width: 300px;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 10px;
-      box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
-      border: 1px solid rgba(255, 0, 0, 0.1);
-      z-index: 1000;
-    }
-  
-    nav.active {
-      display: block;
-      animation: slideIn 0.3s ease-out;
-    }
-  
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+
+  .home-img img {
+    width: 70%;
+    margin: 0 auto;
   }
-  
-  @media screen and (max-width: 995px) {
-    .Tcontainer {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 1rem;
-      gap: 1.5rem;
-    }
-  
-    .tech_img {
-      width: 70px;
-      height: 70px;
-    }
-  
-    .skill-icon {
-      width: 40px;
-      height: 40px;
-    }
+
+  .home-content {
+    padding: 0 1rem;
   }
-  
-  @media screen and (max-width: 576px) {
-    .Tcontainer {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 0.5rem;
-      gap: 1rem;
-    }
+
+  .button-container {
+    justify-content: center;
   }
-  
-  @media (max-width: 768px) {
-    .modal-content {
-      width: 90%;
-      margin: 20px auto;
-      padding: 15px;
-    }
-  
-    #submit {
-      width: 100%;
-      margin: 0;
-    }
-  
-    #name,
-    #email,
-    #message {
-      padding: 10px 15px;
-    }
+
+  .Tcontainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  @media (max-width: 768px) {
-    .carousel-grid {
-      grid-template-columns: 1fr;
-      gap: 15px;
-      padding: 10px;
-    }
-  
-    .carousel-img {
-      height: 250px;
-    }
-  
-    .grid-caption {
-      font-size: 1rem;
-      padding: 15px;
-    }
-  
-    .certificate-badge {
-      font-size: 0.7rem;
-      padding: 3px 8px;
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 1rem;
   }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      gap: 2rem;
-      text-align: center;
-    }
-  
-    .quick-links-grid {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-  
-    .wrapper {
-      justify-content: center;
-      gap: 1rem;
-    }
-  
-    .wrapper .icon {
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
-      margin: 10px;
-    }
+
+  .project-grid {
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 768px) {
-    .project-info {
-      padding: 1rem;
-    }
-  
-    .project-description {
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-    }
-  
-    .tech-tags {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-  
-    .tech-tag {
-      font-size: 0.8rem;
-      padding: 0.2rem 0.5rem;
-    }
-  
-    .btn-hover {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
-    }
+
+  .carousel-grid {
+    grid-template-columns: 1fr;
   }
-  
-  @media screen and (max-width: 768px) {
-    [data-aos] {
-      pointer-events: auto !important;
-    }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  
-  @media (max-width: 576px) {
-    .certificate-details .row {
-      flex-direction: column;
-    }
-    
-    .certificate-details .col-md-6 {
-      margin-bottom: 15px;
-    }
-    
-    .modal-footer {
-      flex-direction: column-reverse;
-      gap: 10px;
-    }
-    
-    .btn {
-      width: 100%;
-    }
-    
-    .carousel-img {
-      height: 250px;
-    }
+
+  .footer-info h3::after,
+  .footer-quick-links h3::after,
+  .footer-social h3::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
-  
-  @media (max-width: 768px) {
-    .carousel-grid {
-        grid-template-columns: repeat(1,1fr);
-        gap: 20px;
-        padding: 15px;
-    }
-    
-    .carousel-img {
-        height: 300px;
-    }
-    
-    .modal-dialog {
-        margin: 15px;
-        max-width: 95%;
-    }
-    
-    .grid-caption {
-        padding: 15px;
-        font-size: 1.1rem;
-    }
-    
-    .certificate-badge {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-    }
+
+  .contact-details li {
+    justify-content: center;
   }
+
+  .quick-links-grid {
+    justify-content: center;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #contactBtn,
+  #resumeBtn {
+    width: 100%;
+  }
+
+  .tech_img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .certificate-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .home {
+    min-height: auto;
+    padding: 6rem 2rem;
+  }
+
+  .home-img img {
+    width: 40%;
+  }
+
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* High Resolution Screens */
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* Support for Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-dark: #000000;
+    --bg-light: #1a0000;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .home-content,
+  .project-description,
+  .Tech_header {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #tech, #skills {
+    margin-top: 0;
+    padding-top: 4rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .home {
+    min-height: auto;
+    padding-top: 6rem;
+  }
+
+  .home-content {
+    text-align: center;
+  }
+
+  .Tcontainer {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .skill-box {
+    margin-bottom: 0;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Tcontainer {
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .skill-box {
+    padding: 1rem;
+  }
+
+  .home-img img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #contactBtn, #resumeBtn {
+    width: 100%;
+  }
+
+  .project-content {
+    padding: 1.2rem;
+  }
+
+  .certificate-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Ensure smooth section transitions */
+@media screen and (max-width: 768px) {
+  section {
+    scroll-margin-top: 70px;
+  }
+
+  .section-transition {
+    padding: 3rem 0;
+  }
+
+  [data-section] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fix skills layout */
+@media screen and (max-width: 576px) {
+  .Tcontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .tech_img {
+    width: 55px;
+    height: 55px;
+    padding: 0.7rem;
+  }
+
+  .skill-title h3 {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (pointer: coarse) {
+  nav a,
+  .btn,
+  .skill-box,
+  .project-item {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .grid-item {
+    touch-action: manipulation;
+  }
+}
