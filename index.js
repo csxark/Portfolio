@@ -222,3 +222,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Handle resume download
+document.addEventListener('DOMContentLoaded', function() {
+  const resumeBtn = document.querySelector('#resumeBtn');
+  if (resumeBtn) {
+    resumeBtn.addEventListener('click', function(e) {
+      // Stop event only if the click was directly on the button
+      if (e.target.id === 'resumeBtn') {
+        e.preventDefault();
+        const link = document.createElement('a');
+        link.href = 'images/resume.pdf';
+        link.target = '_blank';
+        link.download = 'resume.pdf';
+        link.click();
+      }
+    });
+  }
+});

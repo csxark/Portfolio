@@ -177,8 +177,14 @@ span {
   filter: drop-shadow(#ff0000 0 0 15px);
 }
 
-#contactBtn {
+.button-container {
   display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+#contactBtn, #resumeBtn {
+  display: inline-flex;
   padding: 1rem 2.5rem;
   background-color: black;
   border-radius: 4rem;
@@ -189,9 +195,10 @@ span {
   border: 2px solid #b74b4b;
   transition: 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
-#contactBtn:hover {
+#contactBtn:hover, #resumeBtn:hover {
   transform: scale3d(1.03);
   background-color: #ff0000;
   color: rgb(0, 0, 0);
