@@ -1,0 +1,39 @@
+/* Education CSS */
+#education {
+    padding: 2rem;
+    background-color: #000000;
+    margin-top: -10px;
+  }
+  
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .education-item {
+    background-color: #181818;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(244, 4, 4, 0.518);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(rgb(255, 0, 0) 0 0 5px);
+  }
+  
+  .education-item h3 {
+    color: rgb(255, 238, 0);
+    font-size: 2rem;
+    margin-top: 0;
+    filter: drop-shadow(rgb(0, 0, 0) 0 0 5px);
+  }
+  
+  .education-item p {
+    margin: 0.5rem 0;
+  }

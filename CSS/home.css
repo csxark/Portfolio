@@ -1,0 +1,135 @@
+/* Home */
+.home {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    display: flex;
+    margin-top: -10px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    gap: 8rem;
+  }
+  
+  .home .home-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: whitesmoke;
+  }
+  
+  span {
+    color: #ff0000;
+  }
+  
+  .home-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: whitesmoke;
+  }
+  
+  .home-content p {
+    font-size: 1.2rem;
+    color: whitesmoke;
+  }
+  
+  .home-img {
+    border-radius: 50%;
+  }
+  
+  .home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s linear;
+  }
+  
+  .home-img img:hover {
+    font-size: 1.8rem;
+    font-weight: 500;
+    border: #ff0000 solid 2px;
+    filter: drop-shadow(#ff0000 0 0 15px);
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  #contactBtn, #resumeBtn {
+    display: inline-flex;
+    padding: 1rem 2.5rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 0.9rem;
+    color: #ffffff;
+    letter-spacing: 0.3rem;
+    font-weight: bolder;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  #contactBtn:hover, #resumeBtn:hover {
+    transform: scale3d(1.03);
+    background-color: #ff0000;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    filter: drop-shadow(red 0 0 5px);
+  }
+  
+  .typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+  }
+  
+  .typing-text span {
+    position: relative;
+  }
+  
+  .typing-text span::before {
+    content: "software Developer";
+    color: #ff0000;
+    animation: words 12s infinite;
+    filter: drop-shadow(red 0px 12px 30px);
+  }
+  
+  .typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+  }
+  
+  @keyframes cursor {
+    to {
+      border-left: 3px solid #ff0000;
+    }
+  }
+  
+  @keyframes words {
+    0%,
+    20% {
+      content: "Web Developer";
+    }
+    21%,
+    40% {
+      content: "Developer";
+    }
+    41%,
+    60% {
+      content: "Web Designer";
+    }
+    61%,
+    100% {
+      content: "Content Writer";
+    }
+  }

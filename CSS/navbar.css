@@ -1,0 +1,122 @@
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color: #ff0000;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+    text-decoration: none;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  nav a {
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    color: #ff0000;
+    filter: drop-shadow(red 0px 2px 9px);
+    transform: scale(0.9);
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 995px) {
+    .menu-toggle {
+      display: block;
+      z-index: 9999;
+    }
+  
+    nav {
+      position: fixed;
+      display: none;
+      top: 4rem;
+      right: 1rem;
+      width: 80%;
+      max-width: 300px;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  
+    nav.active {
+      display: block;
+      animation: slideIn 0.3s ease-out;
+    }
+  
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    nav a {
+      display: block;
+      font-size: 1.5rem;
+      margin: 2rem 0;
+      background: none;
+      margin-right: 30px;
+    }
+  
+    nav a:hover,
+    nav a.active {
+      padding: 1rem;
+    }
+  }
+  
+  @media (min-width: 996px) {
+    .menu-toggle {
+      display: none;
+      z-index: 9999;
+    }
+  
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: static;
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+  
+    nav a {
+      margin-left: 2rem;
+      display: inline-block;
+    }
+  }

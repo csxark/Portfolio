@@ -1,0 +1,218 @@
+/* Footer CSS */
+#footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: -50px;
+  }
+  
+  .portfolio-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 0 20px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-details li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-details i {
+    margin-right: 10px;
+    color: #ff0000;
+  }
+  
+  .footer-social {
+    margin-top: 20px;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #000000;
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: -80px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    font-variant: small-caps;
+    background: #ff0000;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    background: #ff0000;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -40px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover {
+    background: #ff0000;
+  }
+  
+  .wrapper .icon:hover i {
+    color: #ffffff;
+  }
+  
+  .wrapper .portfolio,
+  .wrapper .github,
+  .wrapper .linkedin,
+  .wrapper .instagram {
+    background: #1a1818;
+    color: #ffffff;
+    filter: drop-shadow(0 0 5px #f8a7a7be);
+  }
+  
+  .wrapper .linkedin:hover,
+  .wrapper .linkedin:hover .tooltip,
+  .wrapper .linkedin:hover .tooltip::before {
+    background: linear-gradient(135deg, #00a6ff, #007bff, #0056b3);
+    color: #ffffff;
+  }
+  
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: linear-gradient(135deg, #2b3137, #24292e, #1b1f23);
+    color: #ffffff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d
+    );
+    color: #ffffff;
+  }
+  .wrapper .portfolio:hover,
+  .wrapper .portfolio:hover .tooltip,
+  .wrapper .portfolio:hover .tooltip::before {
+    background: linear-gradient(45deg, #ff0000, #ff8c00, #808080, #000000);
+    color: #ffffff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #ff0000;
+  }
+  
+  .footer-bottom p {
+    font-size: 14px;
+  }
+  
+  .footer-quick-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-quick-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-quick-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-quick-links a:hover {
+    color: #ff0000;
+  }
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .quick-links-grid li {
+    margin-bottom: 5px;
+  }
+  .quick-links-grid a {
+    display: flex;
+    align-items: center;
+  }
+  .quick-links-grid i {
+    margin-right: 7px;
+  }

@@ -1,0 +1,471 @@
+@media (max-width: 995px) {
+    .menu-toggle {
+      display: block;
+      z-index: 9999;
+    }
+  
+    nav {
+      position: fixed;
+      display: none;
+      top: 4rem;
+      right: 1rem;
+      width: 80%;
+      max-width: 300px;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  
+    nav.active {
+      display: block;
+      animation: slideIn 0.3s ease-out;
+    }
+  
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    nav a {
+      display: block;
+      font-size: 1.5rem;
+      margin: 2rem 0;
+      background: none;
+      margin-right: 30px;
+    }
+  
+    nav a:hover,
+    nav a.active {
+      padding: 1rem;
+    }
+  }
+  
+  @media (min-width: 996px) {
+    .menu-toggle {
+      display: none;
+      z-index: 9999;
+    }
+  
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: static;
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+  
+    nav a {
+      margin-left: 2rem;
+      display: inline-block;
+    }
+  }
+  
+  @media (max-width: 990px) {
+    .home {
+      gap: 4rem;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .home {
+      flex-direction: column;
+    }
+  
+    .home .home-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .home-content h1 {
+      font-size: 3rem;
+    }
+  
+    .home-img img {
+      width: 70vw;
+      margin-top: 0.01rem;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) and (min-device-width: 320px) and (max-device-width: 800px) and (orientation: portrait) {
+    .home {
+      flex-direction: column;
+    }
+  
+    .home .home-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .home-content h1 {
+      font-size: 3rem;
+    }
+  
+    .home-img img {
+      width: 70vw;
+      margin-top: 0.1rem;
+    }
+  }
+  
+  @media screen and (max-width: 995px) {
+    .Tcontainer {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1rem;
+      gap: 1.5rem;
+    }
+  
+    .tech_img {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 750px) {
+    .Tcontainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .Tcontainer {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0.5rem;
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+      margin: 20px auto;
+      padding: 15px;
+    }
+  
+    #submit {
+      width: 100%;
+      margin: 0;
+    }
+  
+    #name,
+    #email,
+    #message {
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 10px;
+    }
+  
+    .carousel-img {
+      height: 250px;
+    }
+  
+    .grid-caption {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  
+    .certificate-badge {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-info,
+    .footer-social {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .education-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  
+    .home {
+      padding: 3rem 5% 3rem;
+    }
+  
+    .home .home-content h1 {
+      font-size: 2rem;
+    }
+  
+    .home-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .home-content p {
+      font-size: 1rem;
+    }
+  
+    .typing-text {
+      font-size: 1.5rem;
+      min-width: 200px;
+    }
+  
+    .button-container {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+  
+    #contactBtn, #resumeBtn {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 995px) {
+    nav {
+      position: fixed;
+      display: none;
+      top: 4rem;
+      right: 1rem;
+      width: 80%;
+      max-width: 300px;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1);
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      z-index: 1000;
+    }
+  
+    nav.active {
+      display: block;
+      animation: slideIn 0.3s ease-out;
+    }
+  
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  
+  @media screen and (max-width: 995px) {
+    .Tcontainer {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1rem;
+      gap: 1.5rem;
+    }
+  
+    .tech_img {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .Tcontainer {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0.5rem;
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%;
+      margin: 20px auto;
+      padding: 15px;
+    }
+  
+    #submit {
+      width: 100%;
+      margin: 0;
+    }
+  
+    #name,
+    #email,
+    #message {
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 10px;
+    }
+  
+    .carousel-img {
+      height: 250px;
+    }
+  
+    .grid-caption {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  
+    .certificate-badge {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+  
+    .quick-links-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+    .wrapper {
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .wrapper .icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .project-info {
+      padding: 1rem;
+    }
+  
+    .project-description {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+    }
+  
+    .tech-tags {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    .tech-tag {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.5rem;
+    }
+  
+    .btn-hover {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    [data-aos] {
+      pointer-events: auto !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .certificate-details .row {
+      flex-direction: column;
+    }
+    
+    .certificate-details .col-md-6 {
+      margin-bottom: 15px;
+    }
+    
+    .modal-footer {
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+    
+    .carousel-img {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-grid {
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .carousel-img {
+        height: 300px;
+    }
+    
+    .modal-dialog {
+        margin: 15px;
+        max-width: 95%;
+    }
+    
+    .grid-caption {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .certificate-badge {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+  }
