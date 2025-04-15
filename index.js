@@ -79,32 +79,64 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Contact Form
-// Get the modal
-var modal = document.getElementById("contactModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("contactBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function () {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+// Modal handling
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById("contactModal");
+  const btn = document.getElementById("contactBtn");
+  const span = document.getElementsByClassName("close")[0];
+  
+  btn.onclick = function() {
+    modal.style.display = "block";
+    modal.classList.add('show');
+    // Reset form and status when opening modal
+    document.getElementById('contact-form').reset();
+    document.getElementById('form-status').textContent = '';
   }
-}
+  
+  span.onclick = function() {
+    modal.style.display = "none";
+    modal.classList.remove('show');
+  }
+  
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      modal.classList.remove('show');
+    }
+  }
+
+  // Form handling
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submit');
+    const formStatus = document.getElementById('form-status');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending...';
+    formStatus.textContent = '';
+    
+    emailjs.sendForm('service_4e5pu8a', 'template_37pbdwk', this)
+      .then(function() {
+        formStatus.textContent = 'Message sent successfully!';
+        formStatus.style.color = '#00ff00';
+        form.reset();
+        setTimeout(() => {
+          modal.style.display = "none";
+          modal.classList.remove('show');
+        }, 2000);
+      })
+      .catch(function(error) {
+        formStatus.textContent = 'Failed to send message. Please try again.';
+        formStatus.style.color = '#ff0000';
+        console.error('Error:', error);
+      })
+      .finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send';
+      });
+  });
+});
   
 // Enhanced Loader with Progress Indicator
 document.addEventListener("DOMContentLoaded", function() {
