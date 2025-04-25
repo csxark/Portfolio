@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.target.id === 'resumeBtn') {
         e.preventDefault();
         const link = document.createElement('a');
-        link.href = 'images/resume.pdf';
+        link.href = 'assets/resume.pdf';  // Updated path to match the assets folder
         link.target = '_blank';
         link.download = 'resume.pdf';
         link.click();

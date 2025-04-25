@@ -163,10 +163,11 @@
   }
 }
 
-#project-1 .project-image {
+/* Remove these problematic styles */
+/* #project-1 .project-image {
   background-image: url("images/project1.jpg");
 }
 
 #project-2 .project-image {
   background-image: url("images/project2.jpg");
-}
+} */
