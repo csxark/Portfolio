@@ -14,6 +14,23 @@
   margin: 0 auto;
 }
 
+/* Remove any empty grid cells */
+.project-grid:empty {
+  display: none;
+}
+
+.project-grid > *:empty {
+  display: none;
+}
+
+/* Ensure proper spacing when only one project */
+@media (min-width: 768px) {
+  .project-grid:has(.project-item:only-child) {
+    grid-template-columns: minmax(350px, 600px);
+    justify-content: center;
+  }
+}
+
 .project-item {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
@@ -162,12 +179,3 @@
     justify-content: center;
   }
 }
-
-/* Remove these problematic styles */
-/* #project-1 .project-image {
-  background-image: url("images/project1.jpg");
-}
-
-#project-2 .project-image {
-  background-image: url("images/project2.jpg");
-} */
