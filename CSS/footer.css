@@ -179,7 +179,7 @@
   .wrapper .linkedin:hover,
   .wrapper .linkedin:hover .tooltip,
   .wrapper .linkedin:hover .tooltip::before {
-    background: #0077B5;
+    background: #0054b59a;
     color: #ffffff;
   }
   
@@ -193,14 +193,14 @@
   .wrapper .instagram:hover,
   .wrapper .instagram:hover .tooltip,
   .wrapper .instagram:hover .tooltip::before {
-    background: #E4405F;
+    background: #e4405e8d;
     color: #ffffff;
   }
   
   .wrapper .portfolio:hover,
   .wrapper .portfolio:hover .tooltip,
   .wrapper .portfolio:hover .tooltip::before {
-    background: #ff0000;
+    background: #ff000096;
     color: #ffffff;
   }
   
